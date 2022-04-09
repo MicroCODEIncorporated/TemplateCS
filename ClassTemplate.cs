@@ -1,5 +1,7 @@
-// <copyright file="ClassTemplate.cs" company="MicroCODE Incorporated">Copyright © 2018-2020 MicroCODE Incorporated Troy, MI</copyright><author>Timothy J. McGuire</author>
-
+// <copyright file="ClassTemplate.cs" company="MicroCODE Incorporated">Copyright © 2018-2022 MicroCODE, Inc. Troy, MI</copyright><author>Timothy J. McGuire</author>
+// D O C U M E N T A T I O N
+#region Documenation
+#region Preamble
 /*
  *      Title:    <Class Description>
  *      Module:   ClassTemplate (<Namespace>:ClassTemplate.cs)
@@ -9,7 +11,7 @@
  *      Date:     <Class Creation Date>
  *      Author:   <Class Author's Name>
  *
- *      Designed and Coded: 1998-2019 MicroCODE Incorporated
+ *      Designed and Coded: 1998-2022 MicroCODE Incorporated
  *
  *      This software and related materials are the property of
  *      MicroCODE Incorporated and contain confidential and proprietary
@@ -44,6 +46,8 @@
  *
  *
  */
+#endregion
+#endregion
 
 namespace MicroCODE
 {
@@ -77,11 +81,10 @@ namespace MicroCODE
 
         // F I E L D S
         #region Fields
-#if APP
-        private bool _isDisposed;  // Set true when object has been disposed
 
+        private bool _isDisposed;  // Set true when object has been disposed
         private Mutex _propertyMutex = new Mutex();  // For thread safe operations on class properties
-#endif
+
         #endregion  // Fields
 
         // C O N S T R U C T O R
@@ -227,7 +230,6 @@ namespace MicroCODE
         {
             if (disposing)
             {
-#if APP
                 try
                 {
                     if (App.HasValidHandle(_propertyMutex))
@@ -249,7 +251,6 @@ namespace MicroCODE
                 {
                     App.Exception(FullClassName, exception);
                 }
-#endif
             }
         }
 
